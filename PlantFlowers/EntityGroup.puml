@@ -1,0 +1,12 @@
+@startuml
+enum com.TianYaNing.BasicGameSample.constant.EntityGroup {
++  FLOWER
++  SEED
++  GirlPLAYER
++  BoyPLAYER
++  Land
++  Pansy
++  Daisy
++  Calla
+}
+@enduml

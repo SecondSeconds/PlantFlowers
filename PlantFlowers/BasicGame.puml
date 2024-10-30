@@ -1,0 +1,18 @@
+@startuml
+class com.TianYaNing.BasicGameSample.BasicGameSample {
+# void initGame()
+# void onPreInit()
+# void initGameVars(Map<String,Object>)
+# void initInput()
+# void initSettings(GameSettings)
+# void initUI()
+- void setLevel()
+# void initPhysics()
++ {static} void main(String[])
+- void setLand()
+- Rectangle addUI(String,double,double)
+}
+
+
+com.almasb.fxgl.app.GameApplication <|-- com.TianYaNing.BasicGameSample.BasicGameSample
+@enduml

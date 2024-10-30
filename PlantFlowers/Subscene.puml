@@ -1,0 +1,85 @@
+@startuml
+class com.TianYaNing.BasicGameSample.ui.BagScene {
+- AnchorPane pane
+~ double height
+~ double width
+~ double paneHeight
+~ double paneWidth
+~ double NodeWidth
+~ double NodeHeight
+- void addFlowerInformation(String,double)
+}
+class com.TianYaNing.BasicGameSample.ui.SelectIdentityScene {
+- String Boy
+- String Girl
+- int BoySign
+- int GirlSign
+- ImageView girlPlayer
+- ImageView boyPlayer
+}
+class com.TianYaNing.BasicGameSample.ui.InformationScene {
+~ double height
+~ double width
+~ double paneHeight
+~ double paneWidth
+~ double NodeWidth
+~ double NodeHeight
+~ AnchorPane pane
+~ Text PansyText
+~ Text PansyFlowerNumberText
+~ Text PansySeedNumberText
+~ Text DaisyFlowerNumberText
+~ Text DaisySeedNumberText
+~ Text DaisyText
+~ Text CallaText
+~ Text CallaFlowerNumberText
+~ Text CallaSeedNumberText
+}
+class com.TianYaNing.BasicGameSample.ui.ErrorScene {
+- AnchorPane pane
+~ double height
+~ double width
+~ double paneHeight
+~ double paneWidth
+~ double NodeWidth
+~ double NodeHeight
+~ Text text
+}
+class com.TianYaNing.BasicGameSample.ui.HarvestScene {
+- AnchorPane pane
+~ double height
+~ double width
+~ double paneHeight
+~ double paneWidth
+~ double NodeWidth
+~ double NodeHeight
+~ String name
+}
+class com.TianYaNing.BasicGameSample.ui.PlantScene {
+- double PlantX
+- double PlantY
+}
+class com.TianYaNing.BasicGameSample.ui.ShopScene {
+- AnchorPane pane
+~ double height
+~ double width
+~ double paneHeight
+~ double paneWidth
+~ double NodeWidth
+~ double NodeHeight
+- void addFlowerBuy(String,String,double)
+- void addFlowerSell(String,String,double)
+}
+class com.TianYaNing.BasicGameSample.ui.IdentityScene {
+}
+
+
+com.almasb.fxgl.scene.SubScene <|-- com.TianYaNing.BasicGameSample.ui.BagScene
+com.almasb.fxgl.scene.SubScene <|-- com.TianYaNing.BasicGameSample.ui.SelectIdentityScene
+com.almasb.fxgl.scene.SubScene <|-- com.TianYaNing.BasicGameSample.ui.InformationScene
+com.almasb.fxgl.scene.SubScene <|-- com.TianYaNing.BasicGameSample.ui.ErrorScene
+com.almasb.fxgl.scene.SubScene <|-- com.TianYaNing.BasicGameSample.ui.HarvestScene
+com.almasb.fxgl.scene.SubScene <|-- com.TianYaNing.BasicGameSample.ui.PlantScene
+com.almasb.fxgl.scene.SubScene <|-- com.TianYaNing.BasicGameSample.ui.ShopScene
+com.almasb.fxgl.scene.SubScene <|-- com.TianYaNing.BasicGameSample.ui.IdentityScene
+@enduml

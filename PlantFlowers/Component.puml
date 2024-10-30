@@ -1,0 +1,53 @@
+@startuml
+class com.TianYaNing.BasicGameSample.component.IdentityComponent {
+- LazyValue<IdentityScene> IdentitySceneLazyValue
+- EventHandler<MouseEvent> IdentityHandler
++ void onAdded()
+}
+class com.TianYaNing.BasicGameSample.component.PlantComponent {
+- Entity PlantEntity
+- EventHandler<MouseEvent> PlantHandler
+~ String name
+- LazyValue<PlantScene> plantSceneLazyValue
++ void onAdded()
++ void play()
++ void stop()
+}
+class com.TianYaNing.BasicGameSample.component.GrowComponent {
+- int growthCircle1
+- int growthCircle2
+- int growthCircle3
+- int growthCircle4
+~ String url1
+~ String url2
+~ String url3
+~ String url4
+- Entity harvestEntity
+- EventHandler<MouseEvent> harvestEvent
+- LazyValue<HarvestScene> harvestSceneLazyValue
++ void onAdded()
++ void grow1()
++ void grow2()
++ void grow3()
++ void grow4()
++ void harvest()
++ void afterHarvest()
+}
+class com.TianYaNing.BasicGameSample.component.MoveComponent {
+- double SpeedX
+- double SpeedY
+- double MaxSpeed
++ void onUpdate(double)
++ void up()
++ void left()
++ void right()
++ void down()
++ void stop()
+}
+
+
+com.almasb.fxgl.entity.component.Component <|-- com.TianYaNing.BasicGameSample.component.IdentityComponent
+com.almasb.fxgl.entity.component.Component <|-- com.TianYaNing.BasicGameSample.component.PlantComponent
+com.almasb.fxgl.entity.component.Component <|-- com.TianYaNing.BasicGameSample.component.GrowComponent
+com.almasb.fxgl.entity.component.Component <|-- com.TianYaNing.BasicGameSample.component.MoveComponent
+@enduml

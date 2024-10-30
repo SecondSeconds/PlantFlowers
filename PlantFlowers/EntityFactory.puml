@@ -1,0 +1,13 @@
+@startuml
+class com.TianYaNing.BasicGameSample.factory.MapEntityFactory {
++ Entity newBag(SpawnData)
++ Entity newLand(SpawnData)
++ Entity newPlayer(SpawnData)
++ Entity newWildPansy(SpawnData)
++ Entity newDaisy(SpawnData)
++ Entity newCalla(SpawnData)
+}
+
+
+com.almasb.fxgl.entity.EntityFactory <|.. com.TianYaNing.BasicGameSample.factory.MapEntityFactory
+@enduml

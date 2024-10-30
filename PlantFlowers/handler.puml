@@ -1,0 +1,9 @@
+@startuml
+class com.TianYaNing.BasicGameSample.handler.PlayerLandCollisionHandler {
+# void onCollisionBegin(Entity,Entity)
+# void onCollisionEnd(Entity,Entity)
+}
+
+
+com.almasb.fxgl.physics.CollisionHandler <|-- com.TianYaNing.BasicGameSample.handler.PlayerLandCollisionHandler
+@enduml

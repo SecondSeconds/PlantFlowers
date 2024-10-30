@@ -1,0 +1,25 @@
+@startuml
+interface com.TianYaNing.BasicGameSample.Config {
+~ {static} int APPHeight
+~ {static} int APPWidth
+~ {static} int LandXNumber
+~ {static} int LandYNumber
+~ {static} double UIWidth
+~ {static} double UIHeight
+~ {static} double UIDistance
+~ {static} String GOLD_KEY
+~ {static} String FPS_KEY
+~ {static} String PANSY_KEY
+~ {static} String PANSY_Flower
+~ {static} String PANSY_SEED_PRICE
+~ {static} String PANSY_FLOWER_PRICE
+~ {static} String Daisy_KEY
+~ {static} String DAISY_SEED_PRICE
+~ {static} String DAISY_FLOWER_PRICE
+~ {static} String Daisy_Flower
+~ {static} String Calla_KEY
+~ {static} String Calla_SEED_PRICE
+~ {static} String Calla_FLOWER_PRICE
+~ {static} String Calla_Flower
+}
+@enduml

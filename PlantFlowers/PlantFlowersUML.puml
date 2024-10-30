@@ -1,0 +1,198 @@
+@startuml
+class com.TianYaNing.BasicGameSample.component.IdentityComponent {
+- LazyValue<IdentityScene> IdentitySceneLazyValue
+- EventHandler<MouseEvent> IdentityHandler
++ void onAdded()
+}
+class com.TianYaNing.BasicGameSample.ui.SelectIdentityScene {
+- String Boy
+- String Girl
+- int BoySign
+- int GirlSign
+- ImageView girlPlayer
+- ImageView boyPlayer
+}
+class com.TianYaNing.BasicGameSample.ui.ErrorScene {
+- AnchorPane pane
+~ double height
+~ double width
+~ double paneHeight
+~ double paneWidth
+~ double NodeWidth
+~ double NodeHeight
+~ Text text
+}
+class com.TianYaNing.BasicGameSample.component.PlantComponent {
+- Entity PlantEntity
+- EventHandler<MouseEvent> PlantHandler
+~ String name
+- LazyValue<PlantScene> plantSceneLazyValue
++ void onAdded()
++ void play()
++ void stop()
+}
+class com.TianYaNing.BasicGameSample.ui.PlantScene {
+- double PlantX
+- double PlantY
+}
+class com.TianYaNing.BasicGameSample.BasicGameSample {
+# void initGame()
+# void onPreInit()
+# void initGameVars(Map<String,Object>)
+# void initInput()
+# void initSettings(GameSettings)
+# void initUI()
+- void setLevel()
+# void initPhysics()
++ {static} void main(String[])
+- void setLand()
+- Rectangle addUI(String,double,double)
+}
+class com.TianYaNing.BasicGameSample.handler.PlayerLandCollisionHandler {
+# void onCollisionBegin(Entity,Entity)
+# void onCollisionEnd(Entity,Entity)
+}
+class com.TianYaNing.BasicGameSample.ui.IdentityScene {
+}
+enum com.TianYaNing.BasicGameSample.constant.EntityGroup {
++  FLOWER
++  SEED
++  GirlPLAYER
++  BoyPLAYER
++  Land
++  Pansy
++  Daisy
++  Calla
+}
+class com.TianYaNing.BasicGameSample.factory.MapEntityFactory {
++ Entity newBag(SpawnData)
++ Entity newLand(SpawnData)
++ Entity newPlayer(SpawnData)
++ Entity newWildPansy(SpawnData)
++ Entity newDaisy(SpawnData)
++ Entity newCalla(SpawnData)
+}
+interface com.TianYaNing.BasicGameSample.Config {
+~ {static} int APPHeight
+~ {static} int APPWidth
+~ {static} int LandXNumber
+~ {static} int LandYNumber
+~ {static} double UIWidth
+~ {static} double UIHeight
+~ {static} double UIDistance
+~ {static} String GOLD_KEY
+~ {static} String FPS_KEY
+~ {static} String PANSY_KEY
+~ {static} String PANSY_Flower
+~ {static} String PANSY_SEED_PRICE
+~ {static} String PANSY_FLOWER_PRICE
+~ {static} String Daisy_KEY
+~ {static} String DAISY_SEED_PRICE
+~ {static} String DAISY_FLOWER_PRICE
+~ {static} String Daisy_Flower
+~ {static} String Calla_KEY
+~ {static} String Calla_SEED_PRICE
+~ {static} String Calla_FLOWER_PRICE
+~ {static} String Calla_Flower
+}
+class com.TianYaNing.BasicGameSample.ui.BagScene {
+- AnchorPane pane
+~ double height
+~ double width
+~ double paneHeight
+~ double paneWidth
+~ double NodeWidth
+~ double NodeHeight
+- void addFlowerInformation(String,double)
+}
+class com.TianYaNing.BasicGameSample.ui.InformationScene {
+~ double height
+~ double width
+~ double paneHeight
+~ double paneWidth
+~ double NodeWidth
+~ double NodeHeight
+~ AnchorPane pane
+~ Text PansyText
+~ Text PansyFlowerNumberText
+~ Text PansySeedNumberText
+~ Text DaisyFlowerNumberText
+~ Text DaisySeedNumberText
+~ Text DaisyText
+~ Text CallaText
+~ Text CallaFlowerNumberText
+~ Text CallaSeedNumberText
+}
+class com.TianYaNing.BasicGameSample.FakeMain {
++ {static} void main(String[])
+}
+class com.TianYaNing.BasicGameSample.component.GrowComponent {
+- int growthCircle1
+- int growthCircle2
+- int growthCircle3
+- int growthCircle4
+~ String url1
+~ String url2
+~ String url3
+~ String url4
+- Entity harvestEntity
+- EventHandler<MouseEvent> harvestEvent
+- LazyValue<HarvestScene> harvestSceneLazyValue
++ void onAdded()
++ void grow1()
++ void grow2()
++ void grow3()
++ void grow4()
++ void harvest()
++ void afterHarvest()
+}
+class com.TianYaNing.BasicGameSample.ui.HarvestScene {
+- AnchorPane pane
+~ double height
+~ double width
+~ double paneHeight
+~ double paneWidth
+~ double NodeWidth
+~ double NodeHeight
+~ String name
+}
+class com.TianYaNing.BasicGameSample.ui.ShopScene {
+- AnchorPane pane
+~ double height
+~ double width
+~ double paneHeight
+~ double paneWidth
+~ double NodeWidth
+~ double NodeHeight
+- void addFlowerBuy(String,String,double)
+- void addFlowerSell(String,String,double)
+}
+class com.TianYaNing.BasicGameSample.component.MoveComponent {
+- double SpeedX
+- double SpeedY
+- double MaxSpeed
++ void onUpdate(double)
++ void up()
++ void left()
++ void right()
++ void down()
++ void stop()
+}
+
+
+com.almasb.fxgl.entity.component.Component <|-- com.TianYaNing.BasicGameSample.component.IdentityComponent
+com.almasb.fxgl.scene.SubScene <|-- com.TianYaNing.BasicGameSample.ui.SelectIdentityScene
+com.almasb.fxgl.scene.SubScene <|-- com.TianYaNing.BasicGameSample.ui.ErrorScene
+com.almasb.fxgl.entity.component.Component <|-- com.TianYaNing.BasicGameSample.component.PlantComponent
+com.almasb.fxgl.scene.SubScene <|-- com.TianYaNing.BasicGameSample.ui.PlantScene
+com.almasb.fxgl.app.GameApplication <|-- com.TianYaNing.BasicGameSample.BasicGameSample
+com.almasb.fxgl.physics.CollisionHandler <|-- com.TianYaNing.BasicGameSample.handler.PlayerLandCollisionHandler
+com.almasb.fxgl.scene.SubScene <|-- com.TianYaNing.BasicGameSample.ui.IdentityScene
+com.almasb.fxgl.entity.EntityFactory <|.. com.TianYaNing.BasicGameSample.factory.MapEntityFactory
+com.almasb.fxgl.scene.SubScene <|-- com.TianYaNing.BasicGameSample.ui.BagScene
+com.almasb.fxgl.scene.SubScene <|-- com.TianYaNing.BasicGameSample.ui.InformationScene
+com.almasb.fxgl.entity.component.Component <|-- com.TianYaNing.BasicGameSample.component.GrowComponent
+com.almasb.fxgl.scene.SubScene <|-- com.TianYaNing.BasicGameSample.ui.HarvestScene
+com.almasb.fxgl.scene.SubScene <|-- com.TianYaNing.BasicGameSample.ui.ShopScene
+com.almasb.fxgl.entity.component.Component <|-- com.TianYaNing.BasicGameSample.component.MoveComponent
+@enduml
